@@ -1,35 +1,13 @@
 import "./style.css";
 
-const addEL = document.querySelectorAll("section button");
+let input = document.getElementById("inputbox");
+let button = document.querySelectorAll("button");
 
-let speicher = 0;
-let oldspeicher = 0;
-let display = "";
-let result = 0;
+let speicher: "";
+let arr = Array.from(button);
 
-for (let i = 0; i < addEL.length; i++) {
-  let itemOfList = addEL[i].id;
-  (<HTMLButtonElement>document.getElementById(itemOfList)).addEventListener(
-    "click",
-    () => input(itemOfList),
-    true
-  );
-  (<HTMLSpanElement>document.getElementById(itemOfList)).addEventListener(
-    "click",
-    () => updateNumber(itemOfList),
-    true
-  );
-}
+arr.forEach((button) =>
+  button.addEventListener("click", () => inputCheck(), true)
+);
 
-function input(InputId: string) {
-  if (InputId === "clear") {
-    window.location.reload();
-  } else if (InputId === " + ") {
-    speicher = parseInt(display);
-    result = oldspeicher + speicher;
-    oldspeicher = result;
-  } else {
-    speicher += InputId;
-    console.log(speicher);
-  }
-}
+function inputCheck() {}
