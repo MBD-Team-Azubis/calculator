@@ -24,18 +24,20 @@ body {
   width: 60px;
   height: 60px;
   margin: 10px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
-form .display {
+form .display div {
   display: flex;
   justify-content: flex-end;
   margin: 20px 0;
+  background-color: #d8e2dc;
+  padding-right: 2%;
 }
 
-form .display input {
+form .display div {
   text-align: right;
   flex: 1;
-  font-size: 45px;
+  font-size: 40px;
   box-shadow: none;
 }
