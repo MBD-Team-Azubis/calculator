@@ -9,38 +9,43 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
-    <section id="calculator">
-      <div
-        name="background"
-        style="background-color: #9d8189"
-        id="calcbox"
-      ></div>
-
-      <div name="startblock" style="background-color: #d8e2dc" id="startblock">
-        <span class="Start" onclick="updateNumber()" id="start">0</span>
+    <div class="container">
+    <div class="calculator">
+      <form>
+      <div class="display">
+        <input type="text" name="display" />
       </div>
       <div name="bedienfeld" style="background-color: #d8e2dc" id="bedienfeld">
-        <section id="numbers">
-          <button id="clear">c</button>
-          <button id="delete">del</button>
-          <button id=" - ">-</button>
-          <button id=" + ">+</button>
-          <button id="1">1</button>
-          <button id="2">2</button>
-          <button id="3">3</button>
-          <button id=" / ">/</button>
-          <button id="4">4</button>
-          <button id="5">5</button>
-          <button id="6">6</button>
-          <button id=" * ">x</button>
-          <button id="7">7</button>
-          <button id="8">8</button>
-          <button id="9">9</button>
-          <button id="equals">=</button>
-          <button id="0">0</button>
-          <button id=".">,</button>
-        </section>
+        <div>
+          <input type="button" value="c">
+          <input type="button" value="del">
+          <input type="button" value="-">
+          <input type="button" value="+">
+        <div>
+          <input type="button" value="1">
+          <input type="button" value="2">
+          <input type="button" value="3">
+          <input type="button" value="/">
+        </div>
+        <div>
+          <input type="button" value="4">
+          <input type="button" value="5">
+          <input type="button" value="6">
+          <input type="button" value="*">
+        </div>
+        <div>
+          <input type="button" value="7">
+          <input type="button" value="8">
+          <input type="button" value="9">
+          <input type="button" value="=">
+        </div>
+        <div>
+          <input type="button" value="0">
+          <input type="button" value="00">
+          <input type="button" value=".">
+        </div>
+      </form>
       </div>
-    </section>
+    </div>
   </body>
 </html>

@@ -2,62 +2,40 @@ body {
   background-color: #ffe5d9;
 }
 
-#calculator {
+.container {
   margin: 0 auto;
-  width: 25%;
-  height: 750px;
-  position: relative;
+  background-color: #9d8189;
+  width: 20%;
+  border-radius: 45px;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 
-#calcbox {
-  background-color: #9d8189;
-  width: 100%;
-  height: 100%;
-  align-self: center;
-  border-radius: 5%;
-  border: 8px solid #d8e2dc;
+.calculator {
+  padding: 20px;
+  border-radius: 10px;
 }
 
-#startblock {
-  background-color: #cce3de;
-  align-content: center;
-  width: calc(100% / 1.11);
-  height: 20%;
-  position: absolute;
-  top: 2rem;
-  left: 1.5rem;
-  text-align: end;
-  font-size: 60px;
+.calculator form input {
+  border: 0;
+  outline: 0;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  font-size: 20px;
 }
 
-#start {
-  padding-right: 0.5rem;
-}
-
-#bedienfeld {
-  background-color: #d8e2dc;
-  position: absolute;
-  align-content: center;
-  width: calc(100% / 1.11);
-  height: 68%;
-  top: 13rem;
-  left: 1.5rem;
+form .display {
   display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
 }
 
-#bedienfeld #numbers {
-  padding: 2%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-#numbers button {
-  font-size: 50px;
-  width: 5.5rem;
-  height: 5.5rem;
+form .display input {
+  text-align: right;
+  flex: 1;
+  font-size: 45px;
+  box-shadow: none;
 }
