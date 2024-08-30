@@ -27,6 +27,15 @@ body {
   font-size: 30px;
 }
 
+form button {
+  border: 0;
+  outline: 0;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  font-size: 30px;
+}
+
 form .display div {
   display: flex;
   justify-content: flex-end;
