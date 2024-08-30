@@ -36,6 +36,7 @@ function input(InputId: number) {
   output = display;
 
   (<HTMLDivElement>document.getElementById("output")).innerHTML = output;
+  input;
 }
 
 function newOutput() {
@@ -45,7 +46,8 @@ function newOutput() {
       greatOutput.push(operatorSpeicher[k]);
     }
   }
-  finalDisplay = finalDisplay + greatOutput.toString();
+  finalDisplay = finalDisplay + greatOutput.join();
+  (<HTMLDivElement>document.getElementById("output")).innerHTML = finalDisplay;
 }
 
 function operatorUse(opInput: string) {
@@ -60,6 +62,7 @@ function operatorUse(opInput: string) {
     operatorSpeicher[counter] = teilzeitOp;
     teilzeitOp = "";
     counter++;
+    newOutput();
   } else if (opInput === "+") {
     speicherStage = parseInt(output);
     numberSpeicher[counter] = speicherStage;
@@ -68,6 +71,7 @@ function operatorUse(opInput: string) {
     operatorSpeicher[counter] = teilzeitOp;
     teilzeitOp = "";
     counter++;
+    newOutput();
   } else if (opInput === "/") {
     speicherStage = parseInt(output);
     numberSpeicher[counter] = speicherStage;
@@ -76,6 +80,7 @@ function operatorUse(opInput: string) {
     operatorSpeicher[counter] = teilzeitOp;
     teilzeitOp = "";
     counter++;
+    newOutput();
   } else if (opInput === "*") {
     speicherStage = parseInt(output);
     numberSpeicher[counter] = speicherStage;
@@ -84,8 +89,10 @@ function operatorUse(opInput: string) {
     operatorSpeicher[counter] = teilzeitOp;
     teilzeitOp = "";
     counter++;
+    newOutput();
   } else if (opInput === "=") {
   } else if (opInput === "delete") {
   } else {
+    newOutput();
   }
 }

@@ -1,10 +1,10 @@
 body {
-  background-color: #ffe5d9;
+  background-color: #dcf5fc;
 }
 
 .container {
   margin: 0 auto;
-  background-color: #9d8189;
+  background-color: #8a8bd6b0;
   width: 20%;
   border-radius: 45px;
   height: 100%;
@@ -40,7 +40,7 @@ form .display div {
   display: flex;
   justify-content: flex-end;
   margin: 20px 0;
-  background-color: #d8e2dc;
+  background-color: #dcf0f88f;
   padding-right: 2%;
 }
 
