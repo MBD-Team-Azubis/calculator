@@ -3,40 +3,33 @@ import "./style.css";
 const button = document.querySelectorAll("section input");
 const operators = document.querySelectorAll("section button");
 
-let display = "";
 let output = "";
-let counter = 0;
 let numberSpeicher: number[] = [];
 let operatorSpeicher: string[] = [];
-let speicherStage: number | string = 0;
-let teilzeitOp = "";
+let speicherStage = 0;
 let greatOutput: (number | string)[] = [];
 let finalDisplay = "";
 
 for (let i = 0; i < button.length; i++) {
-  const itemOfList = button[i].id;
-  const change = parseInt(itemOfList);
-  (<HTMLInputElement>document.getElementById(itemOfList)).addEventListener(
+  const item = button[i].id;
+  (<HTMLInputElement>document.getElementById(item)).addEventListener(
     "click",
-    () => input(change)
+    () => input(item)
   );
 }
 
-for (let i = 0; i < operators.length; i++) {
-  const operatorList = operators[i].id;
-  (<HTMLButtonElement>document.getElementById(operatorList)).addEventListener(
+for (let d = 0; d < operators.length; d++) {
+  const operator = operators[d].id;
+  (<HTMLButtonElement>document.getElementById(operator)).addEventListener(
     "click",
-    () => operatorUse(operatorList)
+    () => operatorUse(operator)
   );
 }
 
 // sorgt für den Input im display.
-function input(InputId: number) {
-  display = display + InputId.toString();
-  output = display;
-
-  (<HTMLDivElement>document.getElementById("output")).innerHTML = output;
-  input;
+function input(InputId: string) {
+  output += InputId;
+  (<HTMLDivElement>document.getElementById("output")).innerText = output;
 }
 
 function newOutput() {
@@ -46,49 +39,34 @@ function newOutput() {
       greatOutput.push(operatorSpeicher[k]);
     }
   }
-  finalDisplay = finalDisplay + greatOutput.join();
-  (<HTMLDivElement>document.getElementById("output")).innerHTML = finalDisplay;
+
+  finalDisplay = finalDisplay + greatOutput.join(",");
+  console.log(finalDisplay);
+  (<HTMLDivElement>document.getElementById("output")).innerText = finalDisplay;
 }
 
 function operatorUse(opInput: string) {
   if (opInput === "clear") {
-    (<HTMLDivElement>document.getElementById("output")).innerHTML = output;
-    console.log(output);
+    (<HTMLDivElement>document.getElementById("output")).innerText = "0";
   } else if (opInput === "-") {
     speicherStage = parseInt(output);
-    numberSpeicher[counter] = speicherStage;
-    speicherStage = 0;
-    teilzeitOp = "-";
-    operatorSpeicher[counter] = teilzeitOp;
-    teilzeitOp = "";
-    counter++;
+    numberSpeicher.push(speicherStage);
+    operatorSpeicher.push(opInput);
     newOutput();
   } else if (opInput === "+") {
     speicherStage = parseInt(output);
-    numberSpeicher[counter] = speicherStage;
-    speicherStage = 0;
-    teilzeitOp = "+";
-    operatorSpeicher[counter] = teilzeitOp;
-    teilzeitOp = "";
-    counter++;
+    numberSpeicher.push(speicherStage);
+    operatorSpeicher.push(opInput);
     newOutput();
   } else if (opInput === "/") {
     speicherStage = parseInt(output);
-    numberSpeicher[counter] = speicherStage;
-    speicherStage = 0;
-    teilzeitOp = "/";
-    operatorSpeicher[counter] = teilzeitOp;
-    teilzeitOp = "";
-    counter++;
+    numberSpeicher.push(speicherStage);
+    operatorSpeicher.push(opInput);
     newOutput();
   } else if (opInput === "*") {
     speicherStage = parseInt(output);
-    numberSpeicher[counter] = speicherStage;
-    speicherStage = 0;
-    teilzeitOp = "*";
-    operatorSpeicher[counter] = teilzeitOp;
-    teilzeitOp = "";
-    counter++;
+    numberSpeicher.push(speicherStage);
+    operatorSpeicher.push(opInput);
     newOutput();
   } else if (opInput === "=") {
   } else if (opInput === "delete") {

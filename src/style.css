@@ -5,7 +5,7 @@ body {
 .container {
   margin: 0 auto;
   background-color: #8a8bd6b0;
-  width: 20%;
+  width: 400px;
   border-radius: 45px;
   height: 100%;
   display: flex;
@@ -18,7 +18,7 @@ body {
   border-radius: 10px;
 }
 
-.calculator form input {
+.calculator input {
   border: 0;
   outline: 0;
   width: 60px;
@@ -27,7 +27,7 @@ body {
   font-size: 30px;
 }
 
-form button {
+button {
   border: 0;
   outline: 0;
   width: 60px;
@@ -36,7 +36,7 @@ form button {
   font-size: 30px;
 }
 
-form .display div {
+.display div {
   display: flex;
   justify-content: flex-end;
   margin: 20px 0;
@@ -44,7 +44,7 @@ form .display div {
   padding-right: 2%;
 }
 
-form .display div {
+.display div {
   text-align: right;
   flex: 1;
   font-size: 40px;
