@@ -45,6 +45,6 @@ function input(InputId: string) {
 }
 
 function evaluate(fn: string) {
-	//text in output wird übergeben und ausgewertet
+	//text in output wird übergeben und ausgewertet mit Hilfe von Function-Constructor
 	return new Function("return " + fn)();
 }
