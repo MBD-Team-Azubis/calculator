@@ -28,8 +28,23 @@ for (let d = 0; d < operators.length; d++) {
 
 // sorgt für den Input im display.
 function input(InputId: string) {
-  output += InputId;
-  (<HTMLDivElement>document.getElementById("output")).innerText = output;
+  if (InputId === "=") {
+    (<HTMLDivElement>document.getElementById("output")).innerText =
+      evaluate(output);
+  } else if (InputId === "clear") {
+    (<HTMLDivElement>document.getElementById("output")).innerText = "0";
+  } else if (InputId === "delete") {
+    output.substring(output.length - 1);
+    (<HTMLDivElement>document.getElementById("output")).innerText = output;
+    console.log(output);
+  } else {
+    output += InputId;
+    (<HTMLDivElement>document.getElementById("output")).innerText = output;
+  }
+}
+
+function evaluate(fn: string) {
+  return new Function("return " + fn)();
 }
 
 function newOutput() {
@@ -40,7 +55,7 @@ function newOutput() {
     }
   }
 
-  finalDisplay = finalDisplay + greatOutput.join(",");
+  finalDisplay = finalDisplay + greatOutput.join("");
   console.log(finalDisplay);
   (<HTMLDivElement>document.getElementById("output")).innerText = finalDisplay;
 }
