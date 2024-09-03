@@ -1,53 +1,53 @@
 body {
-  background-color: #dcf5fc;
+	background-color: #dcf5fc;
 }
 
 .container {
-  margin: 0 auto;
-  background-color: #8a8bd6b0;
-  width: 400px;
-  border-radius: 45px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	margin: 0 auto;
+	background-color: #8a8bd6b0;
+	width: 400px;
+	border-radius: 45px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .calculator {
-  padding: 20px;
-  border-radius: 10px;
+	padding: 20px;
+	border-radius: 10px;
 }
 
 .calculator input {
-  border: 0;
-  outline: 0;
-  width: 60px;
-  height: 60px;
-  margin: 10px;
-  font-size: 30px;
+	border: 0;
+	outline: 0;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	font-size: 30px;
 }
 
 button {
-  border: 0;
-  outline: 0;
-  width: 60px;
-  height: 60px;
-  margin: 10px;
-  font-size: 30px;
+	border: 0;
+	outline: 0;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	font-size: 30px;
+}
+/* warum zweimal ".display div"? */
+.display div {
+	display: flex;
+	justify-content: flex-end;
+	margin: 20px 0;
+	background-color: #dcf0f88f;
+	padding-right: 2%;
 }
 
 .display div {
-  display: flex;
-  justify-content: flex-end;
-  margin: 20px 0;
-  background-color: #dcf0f88f;
-  padding-right: 2%;
-}
-
-.display div {
-  text-align: right;
-  flex: 1;
-  font-size: 40px;
-  box-shadow: none;
-  height: 50px;
+	text-align: right;
+	flex: 1;
+	font-size: 40px;
+	box-shadow: none;
+	height: 50px;
 }
